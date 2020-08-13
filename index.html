@@ -1,0 +1,130 @@
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <style type='text/css'>
+        h1,h2,h3,h4 {
+            text-align: center;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #444;
+        }
+
+        .quadrant {
+            border: 1px solid #444;
+            height: 120px;
+            width: 160px;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .diagram {
+            margin: 0 auto;
+        }
+        .diagramwrap {
+            margin-top: 2.6em;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>the world is a superposition of orthogonal polarities</h1>
+    <p class='subtitle'>refresh the page for new random axes<br>diagram content is editable</p>
+
+    <div class='diagramwrap'>
+        <table class='diagram'>
+            <tr>
+                <td></td>
+                <td colspan=2 id='axis2.2' contenteditable="true"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td rowspan=2 id='axis1.1' contenteditable="true"></td>
+                <td class='quadrant' id='ii' contenteditable="true"></td>
+                <td class='quadrant' id='i' contenteditable="true"></td>
+                <td rowspan=2 id='axis1.2' contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td class='quadrant' id='iii' contenteditable="true"></td>
+                <td class='quadrant' id='iv' contenteditable="true"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan=2 id='axis2.1' contenteditable="true"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <script type='text/javascript'>
+        axes = [
+            ["unstable","stable"],
+            ["insensitive","sensitive"],
+            ["negative","positive"],
+            ["takes a short time","takes a long time"],
+            ["difficult","easy"],
+            ["harmful","helpful"],
+            ["internal","external"],
+            ["powerless","powerful"],
+            ["private","public"],
+            ["bottom up","top down"],
+            ["conditional","unconditional"],
+            ["unhealthy","healthy"],
+            ["static","dynamic"],
+            ["local","global"],
+            ["absent","present"],
+            ["low risk","high risk"],
+            ["relative","absolute"],
+            ["ephemeral","permanent"],
+            ["low level","high level"],
+            ["narrative","reality"],
+            ["weakly held","strongly held"],
+            ["causal","agentic"],
+            ["avoidant","confrontational"],
+            ["closed","open"],
+            ["fake","real"],
+            ["reactive","responsive"],
+            ["evil","good"],
+            ["false","true"],
+            ["simple","complex"],
+            ["empty","full"],
+            ["actual","potential"],
+            ["unknown","known"],
+            ["physical","mental"],
+            ["violent","peaceful"],
+            ["misaligned","aligned"],
+            ["chaotic","orderly"],
+            ["artificial","natural"],
+            ["short-term","long-term"],
+            ["self-oriented","world-oriented"],
+            ["ordinary","extraordinary"],
+            ["subjective","objective"],
+            ["improbable","probable"],
+            ["novice-like","masterful"],
+            ["niche","universal"],
+            ["functional","beautiful"]
+        ];
+
+        n = axes.length;
+        i1 = Math.floor(n*Math.random());
+        i2 = Math.floor(n*Math.random());
+
+        while (i1 == i2) {
+            i2 = Math.floor(n*Math.random());
+        }
+
+        axis1 = axes[i1];
+        axis2 = axes[i2];
+
+        document.getElementById('axis1.1').innerText = axis1[0];
+        document.getElementById('axis1.2').innerText = axis1[1];
+        document.getElementById('axis2.1').innerText = axis2[0];
+        document.getElementById('axis2.2').innerText = axis2[1];
+    </script>
+</body>
+</html>
